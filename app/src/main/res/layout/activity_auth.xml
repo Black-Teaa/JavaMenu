@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/arrow_detail"
+    android:orientation="vertical"
+    tools:context=".Activity.Auth_activity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <TextView
+                android:id="@+id/textView_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="170dp"
+                android:text="@string/text_auth"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:ems="10"
+                android:hint="@string/email_text"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/pass_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="@string/pass_text"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
+                android:textSize="22sp" />
+
+            <CheckBox
+                android:id="@+id/remember_me_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Запомнить меня"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_below="@+id/pass_text"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/button_reg"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/another"
+                android:gravity="center"
+                android:onClick="onClickAuth"
+                android:text="@string/btn_auth"
+                android:textColor="@color/magenta"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/link_to_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:onClick="onClickGoReg"
+                android:text="@string/text_reg"
+                android:textColor="#FDFDFD"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

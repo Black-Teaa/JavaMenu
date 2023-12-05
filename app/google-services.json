@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1013833828282",
+    "project_id": "javamenu-edd86",
+    "storage_bucket": "javamenu-edd86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013833828282:android:d7c6c87becf49bb28fff83",
+        "android_client_info": {
+          "package_name": "com.example.javamenu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbWCyHmFK3mgd_-zj3KrXggbTefRhHScc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

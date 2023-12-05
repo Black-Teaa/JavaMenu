@@ -1,0 +1,249 @@
+@startuml
+class MenuListActivity {
+- RecyclerView.Adapter adapterFoodList
+- RecyclerView recyclerViewFood
+# void onCreate(Bundle)
+- void setUserName()
+- String getUsername()
++ void navigationButtons()
+- void bottomNavigationBar()
+- void initRecyclerView()
+}
+class CartListAdapter {
+~ ArrayList<FoodDomain> listFoodSelected
+- ManageCart manageCart
+~ ChangeNumberItemListener changeNumberItemListener
++ ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ViewHolder,int)
++ int getItemCount()
+}
+class CartListAdapter$ViewHolder {
+~ TextView title
+~ ImageView pic
+~ TextView totalEachItem
+}
+class TinyDB {
+- SharedPreferences preferences
+- String DEFAULT_APP_IMAGEDATA_DIRECTORY
+- String lastImagePath
++ Bitmap getImage(String)
++ String getSavedImagePath()
++ String putImage(String,String,Bitmap)
++ boolean putImageWithFullPath(String,Bitmap)
+- String setupFullPath(String)
+- boolean saveBitmap(String,Bitmap)
++ int getInt(String)
++ ArrayList<Integer> getListInt(String)
++ long getLong(String)
++ float getFloat(String)
++ double getDouble(String)
++ ArrayList<Double> getListDouble(String)
++ ArrayList<Long> getListLong(String)
++ String getString(String)
++ ArrayList<String> getListString(String)
++ boolean getBoolean(String)
++ ArrayList<Boolean> getListBoolean(String)
++ ArrayList<FoodDomain> getListObject(String)
++ T getObject(String,Class<T>)
++ void putInt(String,int)
++ void putListInt(String,ArrayList<Integer>)
++ void putLong(String,long)
++ void putListLong(String,ArrayList<Long>)
++ void putFloat(String,float)
++ void putDouble(String,double)
++ void putListDouble(String,ArrayList<Double>)
++ void putString(String,String)
++ void putListString(String,ArrayList<String>)
++ void putBoolean(String,boolean)
++ void putListBoolean(String,ArrayList<Boolean>)
++ void putObject(String,Object)
++ void putListObject(String,ArrayList<FoodDomain>)
++ void remove(String)
++ boolean deleteImage(String)
++ void clear()
++ Map<String,?> getAll()
++ void registerOnSharedPreferenceChangeListener(SharedPreferences.OnSharedPreferenceChangeListener)
++ void unregisterOnSharedPreferenceChangeListener(SharedPreferences.OnSharedPreferenceChangeListener)
++ {static} boolean isExternalStorageWritable()
++ {static} boolean isExternalStorageReadable()
+- void checkForNullKey(String)
+- void checkForNullValue(String)
+}
+class SettingsActivity {
+# void onCreate(Bundle)
+- String getUsername()
++ void onLogoutClick(View)
+- void clearUserData()
+}
+interface ChangeNumberItemListener {
+~ void changed()
+}
+class MainActivity {
+- EditText loginText
+- DatabaseReference mDataBase
+- FirebaseAuth mAuth
+- String USER_KEY
+# void onCreate(Bundle)
+- void init()
++ void onClickReg(View)
++ void onClickAuth(View)
+- void sendEmailVer()
+- void saveUserData(String)
+- void loadSavedPreferences()
++ void onClickGoAuth(View)
+}
+class User {
++ String id
++ String getLogin()
+}
+class FoodListAdapter {
+~ ArrayList<FoodDomain> items
+~ Context context
++ FoodListAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(FoodListAdapter.ViewHolder,int)
++ int getItemCount()
+}
+class FoodListAdapter$ViewHolder {
+~ TextView titleText
+~ ImageView pic
+}
+class viewholder_for_list {
+# void onCreate(Bundle)
+}
+class ManageCart {
+- Context context
+- TinyDB tinyDB
++ void insertFood(FoodDomain)
++ ArrayList<FoodDomain> getlistCart()
++ void minusNumberFood(ArrayList<FoodDomain>,int,ChangeNumberItemListener)
++ void plusNumberFood(ArrayList<FoodDomain>,int,ChangeNumberItemListener)
++ Double getTotalFee()
+}
+class SecondListActivity {
+- ImageView backBtn
+- RecyclerView.Adapter adapterFoodListSecond
+- RecyclerView recyclerViewFood
+# void onCreate(Bundle)
+- void setVariable()
+- void initRecyclerView()
+- void initView()
+}
+class ButtonsListAdapter {
+~ ArrayList<FoodDomain> itemsGraphic
+~ Context context
++ ButtonsListAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ButtonsListAdapter.ViewHolder,int)
++ int getItemCount()
+}
+class ButtonsListAdapter$ViewHolder {
+~ TextView titleFirst
+~ ImageView picFirst
+}
+class Detail_Activity {
+- Button addCartBtn
+- TextView plusBtn
+- int numberOrder
+- ManageCart manageCart
+- ImageView backBtn
+# void onCreate(Bundle)
+- void setVariable()
+- void getBundle()
+- void initView()
+}
+class activity_viewholder_for_list {
+# void onCreate(Bundle)
+}
+class ThirdListActivity {
+- ImageView backBtn
+- RecyclerView.Adapter adapterFoodListThird
+- RecyclerView recyclerViewFood
+# void onCreate(Bundle)
+- void setVariable()
+- void initRecyclerView()
+- void initView()
+}
+class CartActivity {
+- RecyclerView.Adapter adapter
+- RecyclerView recyclerView
+- TextView feeTxt
+- ManageCart manageCart
+- ScrollView scrollView
+- ImageView backBtn
+# void onCreate(Bundle)
+- void setVariable()
+- void initList()
+- void Calculate()
+- void initView()
+}
+class Auth_activity {
+- EditText authEmail
+- CheckBox rememberMeCheckBox
+- FirebaseAuth mAuth
+# void onCreate(Bundle)
+# void onStart()
+- void init()
++ void onClickReg(View)
+- void saveUserData(String,String)
+- void loadSavedPreferences()
++ void onClickGoReg(View)
+}
+class viewholder_cart {
+# void onCreate(Bundle)
+}
+class FoodDomain {
+- String title
+- String description
+- String pic
+- double price
+- int time
+- int energy
+- int numberinCart
++ String getTitle()
++ void setTitle(String)
++ String getDescription()
++ void setDescription(String)
++ String getPicUrl()
++ void setPicUrl(String)
++ double getPrice()
++ void setPrice(double)
++ int getTime()
++ void setTime(int)
++ int getEnergy()
++ void setEnergy(int)
++ int getNumberinCart()
++ void setNumberinCart(int)
+}
+class FirstListActivity {
+- RecyclerView.Adapter adapterFoodListFirst
+- RecyclerView recyclerViewFood
+- ImageView backBtn
+# void onCreate(Bundle)
+- void setVariable()
+- void initRecyclerView()
+- void initView()
+}
+
+
+AppCompatActivity <|-- MenuListActivity
+Adapter <|-- CartListAdapter
+CartListAdapter +.. CartListAdapter$ViewHolder
+ViewHolder <|-- CartListAdapter$ViewHolder
+AppCompatActivity <|-- SettingsActivity
+AppCompatActivity <|-- MainActivity
+Adapter <|-- FoodListAdapter
+FoodListAdapter +.. FoodListAdapter$ViewHolder
+ViewHolder <|-- FoodListAdapter$ViewHolder
+AppCompatActivity <|-- viewholder_for_list
+AppCompatActivity <|-- SecondListActivity
+Adapter <|-- ButtonsListAdapter
+ButtonsListAdapter +.. ButtonsListAdapter$ViewHolder
+ViewHolder <|-- ButtonsListAdapter$ViewHolder
+AppCompatActivity <|-- Detail_Activity
+Activity <|-- activity_viewholder_for_list
+AppCompatActivity <|-- ThirdListActivity
+AppCompatActivity <|-- CartActivity
+AppCompatActivity <|-- Auth_activity
+AppCompatActivity <|-- viewholder_cart
+Serializable <|.. FoodDomain
+AppCompatActivity <|-- FirstListActivity
+@enduml

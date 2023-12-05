@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ПерекуCity</string>
+    <string name="text_reg">Зарегистрируйтесь</string>
+    <string name="text_auth">Войдите в Аккаунт</string>
+    <string name="text_create_acc">Создайте Аккаунт</string>
+    <string name="log_text">Введите логин</string>
+    <string name="email_text">Введите email</string>
+    <string name="pass_text">Введите пароль</string>
+    <string name="btn_reg">Зарегистрироваться</string>
+    <string name="btn_text_auth">Аутентификация</string>
+    <string name="btn_auth">Вход</string>
+    <string-array name="pay_type">
+        <item>Наличными</item>
+        <item>По Карте</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/drawable_bckg"
+    tools:context=".Holders.activity_viewholder_for_list">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@+id/cal_onfirs_list"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/cal_onfirs_list"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cal_onfirs_list"
+        app:layout_constraintTop_toBottomOf="@+id/cal_onfirs_list" />
+
+    <TextView
+        android:id="@+id/cal_name"
+        style="@style/textstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Калорийность"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/pic_on_firstlist"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <ImageView
+        android:id="@+id/pic_on_firstlist"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_margin="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pumpkin_soup" />
+
+        <TextView
+            android:id="@+id/title_first_list"
+            style="@style/textStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="title"
+            app:layout_constraintStart_toEndOf="@+id/pic_on_firstlist"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@+id/price_on_first_list"
+        android:layout_height="1dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/cal_name"
+        app:layout_constraintEnd_toEndOf="@+id/price_on_first_list"
+        app:layout_constraintStart_toStartOf="@+id/title_first_list"
+        app:layout_constraintTop_toBottomOf="@+id/title_first_list"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/cal_onfirs_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cal_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cal_name" />
+
+    <TextView
+        android:id="@+id/price_on_first_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="$0"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView14"
+        style="@style/textstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Готовка"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pic_on_firstlist" />
+
+    <TextView
+        android:id="@+id/time_on_firstlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="мин"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@+id/time_on_firstlist"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/time_on_firstlist"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/time_on_firstlist"
+        app:layout_constraintTop_toBottomOf="@+id/time_on_firstlist" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/textstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="Цена"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/pic_on_firstlist"
+        app:layout_constraintTop_toBottomOf="@+id/title_first_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
